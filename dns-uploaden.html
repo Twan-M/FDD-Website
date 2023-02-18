@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Twan Mellink - DNS & Uploaden</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+  <!-- Navigatie menu en links naar items -->
+<section class="ontwerp">
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="static/img/png/logo.png" alt="Logo Image"></a>
+    </div>
+    <div class="hamburger">
+        <div class="bars1"></div>
+        <div class="bars2"></div>
+        <div class="bars3"></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ontwerp.html">Ontwerp</a></li>
+        <li><a href="ux-testing.html">UX Testing</a></li>
+        <li><a href="design.html">Design & Toegankelijkheid</a></li>
+        <li><a href="html-css.html">HTML & CSS</a></li>
+        <li><a href="dns-uploaden.html" class="active">DNS & Uploaden</a></li>
+        <li><button class="contact-button" onclick="window.location.href='contact.html';">Neem contact op</button></li>
+    </ul>
+</nav>
+<svg class="ontwerp-image" id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(121, 63, 243, 1)" offset="0%"></stop><stop stop-color="rgba(24, 170, 253, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,10L30,11.7C60,13,120,17,180,30C240,43,300,67,360,78.3C420,90,480,90,540,88.3C600,87,660,83,720,81.7C780,80,840,80,900,76.7C960,73,1020,67,1080,56.7C1140,47,1200,33,1260,28.3C1320,23,1380,27,1440,35C1500,43,1560,57,1620,66.7C1680,77,1740,83,1800,76.7C1860,70,1920,50,1980,40C2040,30,2100,30,2160,38.3C2220,47,2280,63,2340,68.3C2400,73,2460,67,2520,56.7C2580,47,2640,33,2700,38.3C2760,43,2820,67,2880,68.3C2940,70,3000,50,3060,48.3C3120,47,3180,63,3240,60C3300,57,3360,33,3420,28.3C3480,23,3540,37,3600,41.7C3660,47,3720,43,3780,41.7C3840,40,3900,40,3960,48.3C4020,57,4080,73,4140,71.7C4200,70,4260,50,4290,40L4320,30L4320,100L4290,100C4260,100,4200,100,4140,100C4080,100,4020,100,3960,100C3900,100,3840,100,3780,100C3720,100,3660,100,3600,100C3540,100,3480,100,3420,100C3360,100,3300,100,3240,100C3180,100,3120,100,3060,100C3000,100,2940,100,2880,100C2820,100,2760,100,2700,100C2640,100,2580,100,2520,100C2460,100,2400,100,2340,100C2280,100,2220,100,2160,100C2100,100,2040,100,1980,100C1920,100,1860,100,1800,100C1740,100,1680,100,1620,100C1560,100,1500,100,1440,100C1380,100,1320,100,1260,100C1200,100,1140,100,1080,100C1020,100,960,100,900,100C840,100,780,100,720,100C660,100,600,100,540,100C480,100,420,100,360,100C300,100,240,100,180,100C120,100,60,100,30,100L0,100Z"></path></svg>
+  <div class="ontwerp-message">
+    <h1>DNS & Uploaden</h1>
+    <h3><a class="tekst-wit" href="#uploaden">Uploaden</a> | <a class="tekst-wit" href="#datacenters">Datacenters</a> | <a class="tekst-wit" href="#dns">DNS</a></h3>
+  </div>
+</section>
+
+<!-- Categorie/blok Uploaden -->
+<section id="uploaden" class="about_us grijs-section">
+  <div class="row nomargin">
+    <h2 class="section_title">SITE UPLOADEN</h2>
+  </div>
+  <div class="row row2">
+    <div>
+      <h2>Uploaden</h2>
+      <p class="tekst-wit">Nu je een website hebt gemaakt wil je natuurlijk dat andere mensen deze website ook kunnen bezoeken. Als je een website maakt en zelf bezoek via localhost, of door de .html file te openen kan je zelf de website zien. Maar andere mensen kunnen hem nog niet zien. Daarom is het van belang dat je de website upload naar een host of webserver. In dit geval maken we gebruik van een Amazon S3 container die de website host. Hierdoor komt de website openbaar te staan voor iedereen, en kan iedereen ook de website bezoeken. Voor het uploaden heb ik gebruik gemaakt van Cloudberry. Een programma om toegang te krijgen tot het filesystem van de S3 container van de CHE FDD server. Je logt dan in met de inloggegevens die je al hebt, of hebt gekregen en kan dan de bestanden van de website uploaden. Hierdoor komen ze op de server te staan en zijn ze zichtbaar voor iedereen die de website wilt bezoeken.</p>
+      <p class="tekst-wit">Het gebruik van Cloudberry Explorer is eigen vrij eenvoudig. Je klikt bij Source op New Source. Hier kies je de Amazon S3 optie, aangezien dat is wat gebruikt wordt. Vervolgens krijg je een scherm waar je de access en secret key moet invoeren. Deze hebben we gekregen via de mail. En verolgens kan je al verbinding maken. Je moet nu alleen nog de locatie van de folder kiezen, door de standaard root locatie aan te passen naar fdd.hbo-ict.resources/2223/tmellink in mijn geval. En dan krijg je de juiste folder te zien waar je de website files kan uploaden.</p>
+      </div>
+    <div>
+      <figure>
+        <img src="static/img/png/cloudberry.png" alt="foto van cloudberry">
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- Categorie/blok Datacenters -->
+<section id="datacenters" class="about_us grijs-section">
+  <div class="row nomargin">
+    <h2 class="section_title">DATACENTERS</h2>
+  </div>
+  <div class="row row2">
+    <div>
+      <h2>Datacenters</h2>
+      <p class="tekst-wit">Bijna alles wat online zichtbaar is staat opgeslagen op een datacenter. Dit zijn hele grote servers die allemaal verbonden zijn met het internet. Hierdoor zijn websites ook beschikbaar over de hele wereld. Datacenters staan overal over de hele wereld, en hierdoor kan het bijvoorbeeld dat de website van Bol.com niet in Nederland gehost is, maar in Duitsland.</p>
+    </div>
+    <div>
+      <figure>
+        <img src="static/img/png/datacenter.png" alt="foto van een datacenter">
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- Categorie/blok DNS -->
+<section id="dns" class="about_us grijs-section">
+  <div class="row nomargin">
+    <h2 class="section_title">DNS</h2>
+  </div>
+  <div class="row row2">
+    <div>
+      <h2>Dns</h2>
+      <p class="tekst-wit">Het tonen van een website is echter niet zo eenvoudig als vele mensen denken. Aan de buitenkant lijkt het heel simpel, je typt de URL / domein van een website in en voila je site de website. Maar zo simpel werkt het achter de schermen niet helemaal. Elk apparaat dat verbonden is met het internet heeft een eigen IP-adres. Dit is een unieke volgorde van nummers die jou een unieke identiteit geven. Maar ook Datacenters / hosting servers hebben een eigen IP-adres. Zodat deze ook unieke identiteit hebben. Het domein van een website staat verbonden aan het IP-adres van de host van de website. Een domein zelf zou eigenlijk geen verbinding kunnen maken met de website. Hiervoor word gebruik gemaakt van DNS servers. Dit zijn servers die een domeinnaam vertalen naar het verbonden IP-adres. Zodat jij de website te zien krijgt. Als je dus naar Google.com gaat wordt er eerst een verzoek gestuurd naar een DNS server die dan een antwoord terug stuurt met het IP-adres van Google.com zodat je ook daadwerkelijk verbinding kan maken met de servers van Google en de website te zien krijgt. Dit is heel simpel uitgelegd hoe het internet werkt.</p>
+    </div>
+    <div>
+      <figure>
+        <img src="static/img/png/dns.png" alt="foto met uitleg over dns server">
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="footer">
+  <b class="tekst-wit">Twan Mellink / 220979 - FDD 2022-2023</b>
+</div>
+</body>
+<script language="JavaScript" type="text/javascript" src="static/js/script.js"></script>
+</html>
