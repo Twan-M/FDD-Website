@@ -1,0 +1,485 @@
+/* Gebruikte fonts */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:800|Source+Sans+Pro:400,400i,700);
+
+/* Standaard instelling voor de website, zoals achtergrond */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #0c0c0c;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* Boxen die ik kan gebruiken zodat niet elke pagina / "section" een eigen flexbox en rijen / kolommen hoef te maken. */
+.row {
+  max-width: 80rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.row div {
+  flex: 0 0 100%;
+  padding: 0 1rem;
+}
+.row div.profile {
+  flex-basis: calc(100% - 1rem);
+  padding: 0.5rem;
+}
+.row img {
+  width: 100%;
+  height: auto;
+}
+.row.nomargin {
+  margin: 0 auto;
+}
+
+@media (min-width: 22rem) {
+  .row div.profile {
+    flex-basis: calc(50% - 1rem);
+  }
+}
+@media (min-width: 42rem) {
+  .row2 div {
+    flex: 0 0 50%;
+    padding: 1rem;
+  }
+
+  .row4 div {
+    flex: 0 0 50%;
+  }
+  .row4 div.profile {
+    flex-basis: calc(50% - 1rem);
+  }
+
+  .row div.profile {
+    padding: 1rem;
+  }
+}
+@media (min-width: 58rem) {
+  .row4 div {
+    flex: 0 0 25%;
+  }
+  .row4 div.profile {
+    flex-basis: calc(25% - 1rem);
+  }
+
+  .row div.profile {
+    flex-basis: calc(25% - 1rem);
+  }
+}
+
+/* Button layout voor contact knop navigatie */
+.btn,
+button {
+  background: #6951F5;
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Styling voor de home tekst en wave achtergrond. */
+.tekst-wit{
+  color: white;
+}
+
+.tekst-underline {
+  text-decoration: underline;
+}
+
+/* Styling vood de Over Mij sectie op Home page */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-image {
+  position: absolute;
+  max-width: 100%;
+  bottom: -1px;
+  z-index: 0;
+  display: block;
+}
+
+.home-message {
+  text-align: center;
+  padding: 0 1em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Styling voor de categorieen op bijvoorbeeld de Ontwerp pagina */
+.ontwerp {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.ontwerp-image {
+  position: absolute;
+  max-width: 100%;
+  bottom: -1px;
+  z-index: 0;
+  display: block;
+}
+
+.ontwerp-message {
+  text-align: center;
+  padding: 0 1em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header formaat voor desktop */
+@media (min-width: 42rem) {
+  h1 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    color: white;
+  }
+
+  h2 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    color: white;
+  }
+
+  h3 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+    color: white;
+  }
+}
+
+/* Navigatie menu base */
+
+nav{
+  height: 6rem;
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  background:rgba(0, 0, 0, 0.6)
+}
+
+/* logo in navigatie menu */
+
+.logo{
+  padding: 2.5vh 3vw;
+  text-align: left;
+  width: 20vw;
+}
+
+.logo img{
+  height: auto;
+  width: 8rem;
+}
+
+/* Menu items in navigatie styling */
+
+.nav-links{
+  width: 80vw;
+  display: flex;
+  padding: 0 0.7vw;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+  list-style: none;
+  font-weight: 600;
+}
+
+.nav-links li a{
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.125em;
+  transition: border-bottom-color 50ms linear 0s;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.nav-links li a:hover{
+  border-bottom-color: #FFF;
+}
+
+.nav-links li a.active{
+  border-bottom-color: #FFF;
+}
+.nav-links li{
+  position:relative;
+}
+
+.nav-links li a:hover::before{
+  width: 80%;
+}
+
+
+/* Contact knop navigatie style */
+
+.contact-button{
+  padding: 0.6rem 0.8rem;
+  margin-left: 2vw;
+  font-size:1rem;
+  cursor:pointer;
+  background-color: transparent;
+  border:1.5px solid #f2f5f7;
+  border-radius: 2em;
+}
+
+.contact-button:hover{
+  color:#fff;
+  background-color: #6951F5;
+  border:1.5px solid #6951F5;
+  transition: all ease-in-out 350ms;
+}
+
+/* Mobiel burger menu base */
+
+.hamburger div{
+  width: 30px;
+  height: 3px;
+  background: #f2f5f7;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger{
+  display: none;
+}
+
+/* Over mij deel layout*/
+
+.about_us figure {
+  position: relative;
+  overflow: hidden;
+}
+
+.grijs-section {
+  background:rgb(26, 26, 26);
+}
+
+h2.section_title.white {
+  color: white;
+}
+
+h2.section_title:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 5em;
+  background: #6951F5;
+  left: calc(50% - 2.5em);
+}
+
+/* Footer styling zoals het center van de tekst en de margin aan de boven en onderkant */
+.footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-contact {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+/* Styling voor het contact formulier. */
+.contact-invoer {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #6951F5;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.contact-invoer:focus { border:2px solid #4535a1; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+.contact-knop {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#6951F5;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+.contact-knop:hover { 
+  background:#4535a1; 
+}
+
+/* Styling Informatie over mij knop home pagina */
+.info-knop {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 20rem;
+  background:#6951F5;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+  text-decoration: none;
+}
+
+.info-knop:hover { 
+  background:#4535a1; 
+}
+
+/*  Responsive headers voor mobiel etc. Zodat het lettertype kleiner is en de site nog bruikbaar is. */
+
+@media screen and (max-width: 800px){
+  h1 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    color: white;
+  }
+
+  h2 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: white;
+  }
+
+  h3 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: white;
+}
+  nav{
+      position: fixed;
+      z-index: 3;
+  }
+  .logo{
+      padding: 3.5vh 3vw;
+      text-align: left;
+      width: 20vw;
+  }
+  
+  /* Styling voor het mobiele hamburger menu */
+  .hamburger{
+      display:block;
+      position: absolute;
+      cursor: pointer;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+      transition: all 0.7s ease;
+  }
+  .nav-links{
+      background: #4535a1;
+      position: fixed;
+      opacity: 1;
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      clip-path: circle(50px at 90% -20%);
+      -webkit-clip-path: circle(50px at 90% -10%);
+      transition: all 1s ease-out;
+      pointer-events: none;
+  }
+  .nav-links.open{
+      clip-path: circle(1000px at 90% -10%);
+      -webkit-clip-path: circle(1000px at 90% -10%);
+      pointer-events: all;
+  }
+  .nav-links li{
+      opacity: 0;
+  }
+  .nav-links li:nth-child(1){
+      transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2){
+      transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3){
+      transition: all 0.5s ease 0.6s;
+  }
+  .nav-links li:nth-child(4){
+      transition: all 0.5s ease 0.7s;
+  }
+  .nav-links li:nth-child(5){
+      transition: all 0.5s ease 0.8s;
+  }
+  .nav-links li:nth-child(6){
+      transition: all 0.5s ease 0.9s;
+      margin: 0;
+  }
+  .nav-links li:nth-child(7){
+      transition: all 0.5s ease 1s;
+      margin: 0;
+  }
+
+  li.fade{
+      opacity: 1;
+  }
+
+  /* Hamburger menu animatie wanneer klik*/
+
+      .toggle .bars1{
+          transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .toggle .bars2{
+          transition: all 0s ease;
+          width: 0;
+      }
+
+      .toggle .bars3{
+          transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
